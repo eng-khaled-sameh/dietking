@@ -20,7 +20,7 @@ export default function Topbar() {
         <div className="h-4 w-px bg-surface-container-highest"></div>
         <div className="flex items-center gap-space-sm">
           <div className="flex flex-col text-left">
-            <span className="font-label-md text-label-md text-on-surface font-semibold">أحمد المنصور</span>
+            <span className="font-label-md text-label-md text-on-surface font-semibold">سمير عاشور</span>
             <span className="font-label-sm text-label-sm text-on-surface-variant">مدير النظام</span>
           </div>
           <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
