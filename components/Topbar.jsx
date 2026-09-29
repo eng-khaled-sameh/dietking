@@ -1,15 +1,27 @@
 "use client";
 
-export default function Topbar() {
+export default function Topbar({ onMenuToggle }) {
   return (
-    <header className="fixed top-0 right-64 left-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] z-40 flex items-center justify-between px-space-lg">
-      <div className="flex items-center gap-space-md">
+    <header className="fixed top-0 right-0 left-0 lg:right-64 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] z-40 flex items-center justify-between px-space-lg">
+      <div className="flex items-center gap-space-sm">
+        {/* Hamburger – mobile only */}
+        <button
+          className="lg:hidden p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          onClick={onMenuToggle}
+          type="button"
+          aria-label="فتح القائمة"
+        >
+          <span className="material-symbols-outlined text-[22px]">menu</span>
+        </button>
+
         <div className="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md bg-surface-container-high px-space-sm py-space-xs rounded-lg">
           <span className="material-symbols-outlined text-[16px] text-primary">domain</span>
-          <span>الفرع الرئيسي - الرياض</span>
+          <span className="hidden sm:inline">الفرع الرئيسي - الرياض</span>
+          <span className="sm:hidden">الرياض</span>
         </div>
       </div>
-      <div className="flex items-center gap-space-md">
+
+      <div className="flex items-center gap-space-sm sm:gap-space-md">
         <button className="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
           <span className="material-symbols-outlined text-[20px]">dark_mode</span>
         </button>
@@ -17,9 +29,9 @@ export default function Topbar() {
           <span className="material-symbols-outlined text-[20px]">notifications</span>
           <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container"></span>
         </button>
-        <div className="h-4 w-px bg-surface-container-highest"></div>
+        <div className="h-4 w-px bg-surface-container-highest hidden sm:block"></div>
         <div className="flex items-center gap-space-sm">
-          <div className="flex flex-col text-left">
+          <div className="hidden sm:flex flex-col text-left">
             <span className="font-label-md text-label-md text-on-surface font-semibold">سمير عاشور</span>
             <span className="font-label-sm text-label-sm text-on-surface-variant">مدير النظام</span>
           </div>
