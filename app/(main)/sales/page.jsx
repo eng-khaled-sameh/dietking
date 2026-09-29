@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 
-const TAB_ON = "period-tab px-space-md py-space-xs rounded-md font-label-md text-label-md bg-primary-container text-on-primary-container font-semibold transition-colors";
-const TAB_OFF = "period-tab px-space-md py-space-xs rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors";
-const TAB_CUSTOM_ON = "period-tab flex items-center gap-space-xs px-space-md py-space-xs rounded-md font-label-md text-label-md bg-primary-container text-on-primary-container font-semibold transition-colors";
-const TAB_CUSTOM_OFF = "period-tab flex items-center gap-space-xs px-space-md py-space-xs rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors";
+const TAB_ON = "period-tab flex-1 sm:flex-initial text-center px-2.5 sm:px-space-md py-space-xs rounded-md font-label-md text-xs sm:text-label-md bg-primary-container text-on-primary-container font-semibold transition-colors whitespace-nowrap";
+const TAB_OFF = "period-tab flex-1 sm:flex-initial text-center px-2.5 sm:px-space-md py-space-xs rounded-md font-label-md text-xs sm:text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap";
+const TAB_CUSTOM_ON = "period-tab flex-1 sm:flex-initial inline-flex items-center justify-center gap-space-xs px-2.5 sm:px-space-md py-space-xs rounded-md font-label-md text-xs sm:text-label-md bg-primary-container text-on-primary-container font-semibold transition-colors whitespace-nowrap";
+const TAB_CUSTOM_OFF = "period-tab flex-1 sm:flex-initial inline-flex items-center justify-center gap-space-xs px-2.5 sm:px-space-md py-space-xs rounded-md font-label-md text-xs sm:text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap";
 
 const ROW_ON = "branch-row bg-surface-container-high/60 hover:bg-surface-container-high transition-colors cursor-pointer";
 const ROW_OFF = "branch-row hover:bg-surface-container-high/50 transition-colors cursor-pointer";
@@ -164,20 +164,20 @@ export default function SalesPage() {
               متابعة وإدارة مبيعات فروع دايت كينج وتحليل طرق الدفع والعمليات المباشرة
             </p>
           </div>
-          <div className="flex items-center gap-space-sm self-start lg:self-auto">
-            <button className="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-lg text-label-lg shadow-sm" id="btn-export" type="button">
+          <div className="flex flex-wrap sm:flex-nowrap items-center gap-space-sm w-full sm:w-auto">
+            <button className="flex-1 sm:flex-initial flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-lg text-label-lg shadow-sm" id="btn-export" type="button">
               <span className="material-symbols-outlined text-[18px] text-primary">download</span>
               <span>تصدير تقرير المبيعات</span>
             </button>
-            <button className="flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container hover:bg-primary-container/90 transition-all font-label-lg text-label-lg shadow-sm" id="btn-refresh" onClick={handleRefresh} type="button">
+            <button className="flex-1 sm:flex-initial flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary-container text-on-primary-container hover:bg-primary-container/90 transition-all font-label-lg text-label-lg shadow-sm" id="btn-refresh" onClick={handleRefresh} type="button">
               <span className={spinning ? "material-symbols-outlined text-[18px] animate-spin" : "material-symbols-outlined text-[18px]"} id="refresh-icon">sync</span>
               <span>تحديث فوري</span>
             </button>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl">
-          <div className="flex items-center bg-surface-container-lowest p-space-xs rounded-lg">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl">
+          <div className="flex items-center bg-surface-container-lowest p-space-xs rounded-lg overflow-x-auto no-scrollbar w-full sm:w-auto">
             <button className={period === "today" ? TAB_ON : TAB_OFF} onClick={() => setPeriod("today")} type="button">
               اليوم
             </button>
@@ -192,10 +192,10 @@ export default function SalesPage() {
               <span>فترة مخصصة</span>
             </button>
           </div>
-          <div className="flex items-center gap-space-sm min-w-[260px]">
+          <div className="flex items-center justify-between sm:justify-start gap-space-sm w-full sm:w-auto sm:min-w-[260px]">
             <label className="font-label-md text-label-md text-on-surface-variant whitespace-nowrap" htmlFor="branch-select">الفرع المختار:</label>
-            <div className="relative w-full">
-              <select className="w-full bg-surface-container-lowest text-on-surface font-body-md text-body-md py-space-xs px-space-md pr-space-md pl-space-xl rounded-lg focus:outline-none focus:ring-1 focus:ring-primary-container appearance-none cursor-pointer" id="branch-select" value={selectValue} onChange={handleSelectChange}>
+            <div className="relative flex-1 sm:flex-initial">
+              <select className="w-full sm:w-auto bg-surface-container-lowest text-on-surface font-body-md text-body-md py-space-xs px-space-md pr-space-md pl-space-xl rounded-lg focus:outline-none focus:ring-1 focus:ring-primary-container appearance-none cursor-pointer" id="branch-select" value={selectValue} onChange={handleSelectChange}>
                 <option value="all">كل الفروع (9 فروع)</option>
                 {BRANCHES.map(b => (
                   <option key={b.key} value={b.key}>{b.name}</option>
@@ -328,16 +328,16 @@ export default function SalesPage() {
         </div>
         <div className="flex flex-col gap-space-sm">
           {BARS.map(row => (
-            <div key={row.name} className="flex items-center gap-space-md group">
-              <div className="w-44 text-right truncate">
-                <span className="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors">{row.name}</span>
+            <div key={row.name} className="flex items-center gap-space-sm sm:gap-space-md group">
+              <div className="w-28 sm:w-44 text-right truncate shrink-0">
+                <span className="font-label-md text-xs sm:text-label-md text-on-surface group-hover:text-primary transition-colors">{row.name}</span>
               </div>
-              <div className="flex-1 bg-surface-container-lowest h-6 rounded-md overflow-hidden relative flex items-center">
+              <div className="flex-1 bg-surface-container-lowest h-6 rounded-md overflow-hidden relative flex items-center min-w-[50px]">
                 <div className={row.bar} style={{ width: row.width }}></div>
                 <span className="absolute left-space-sm text-label-sm font-label-sm text-on-surface-variant font-mono">{row.pct}</span>
               </div>
-              <div className="w-28 text-left">
-                <span className="font-label-md text-label-md text-on-surface font-bold">{row.amount} <span className="text-label-sm text-on-surface-variant">ر.س</span></span>
+              <div className="w-20 sm:w-28 text-left shrink-0">
+                <span className="font-label-md text-xs sm:text-label-md text-on-surface font-bold">{row.amount} <span className="text-label-sm text-on-surface-variant">ر.س</span></span>
               </div>
             </div>
           ))}
@@ -358,7 +358,7 @@ export default function SalesPage() {
           </span>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-right">
+          <table className="w-full text-right min-w-[700px]">
             <thead>
               <tr className="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
                 <th className="py-space-md px-space-lg">اسم الفرع</th>
@@ -414,7 +414,7 @@ export default function SalesPage() {
           </span>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-right">
+          <table className="w-full text-right min-w-[650px]">
             <thead>
               <tr className="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
                 <th className="py-space-md px-space-lg">التاريخ والوقت</th>

@@ -2,11 +2,11 @@
 
 export default function Topbar({ onMenuToggle }) {
   return (
-    <header className="fixed top-0 right-0 left-0 lg:right-64 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] z-40 flex items-center justify-between px-space-lg">
-      <div className="flex items-center gap-space-sm">
+    <header className="fixed top-0 right-0 left-0 lg:right-64 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] z-40 flex items-center justify-between px-3 sm:px-space-lg">
+      <div className="flex items-center gap-1.5 sm:gap-space-sm">
         {/* Hamburger – mobile only */}
         <button
-          className="lg:hidden p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"
+          className="lg:hidden p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors shrink-0"
           onClick={onMenuToggle}
           type="button"
           aria-label="فتح القائمة"
@@ -14,14 +14,14 @@ export default function Topbar({ onMenuToggle }) {
           <span className="material-symbols-outlined text-[22px]">menu</span>
         </button>
 
-        <div className="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md bg-surface-container-high px-space-sm py-space-xs rounded-lg">
+        <div className="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md bg-surface-container-high px-2 sm:px-space-sm py-1 sm:py-space-xs rounded-lg">
           <span className="material-symbols-outlined text-[16px] text-primary">domain</span>
           <span className="hidden sm:inline">الفرع الرئيسي - الرياض</span>
-          <span className="sm:hidden">الرياض</span>
+          <span className="sm:hidden text-xs">الرياض</span>
         </div>
       </div>
 
-      <div className="flex items-center gap-space-sm sm:gap-space-md">
+      <div className="flex items-center gap-1.5 sm:gap-space-md">
         <button className="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
           <span className="material-symbols-outlined text-[20px]">dark_mode</span>
         </button>

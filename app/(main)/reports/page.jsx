@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
 
-const TAB_ON = "px-space-md py-1.5 rounded-md font-label-sm text-label-sm bg-primary-container text-on-primary font-bold shadow-sm";
-const TAB_OFF = "px-space-md py-1.5 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors";
+const TAB_ON = "flex-1 sm:flex-initial text-center px-2.5 sm:px-space-md py-1.5 rounded-md font-label-sm text-xs sm:text-label-sm bg-primary-container text-on-primary font-bold shadow-sm whitespace-nowrap";
+const TAB_OFF = "flex-1 sm:flex-initial text-center px-2.5 sm:px-space-md py-1.5 rounded-md font-label-sm text-xs sm:text-label-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap";
 
-const BAR_NAME_HI = "w-28 truncate font-label-sm text-label-sm text-on-surface";
-const BAR_NAME_LO = "w-28 truncate font-label-sm text-label-sm text-on-surface-variant";
-const BAR_TRACK_HI = "flex-1 h-3 rounded-full bg-surface-container-highest overflow-hidden";
-const BAR_TRACK_LO = "flex-1 h-2 rounded-full bg-surface-container-highest overflow-hidden";
-const BAR_AMT_HI = "font-label-sm text-label-sm font-bold text-on-surface text-left min-w-[70px]";
-const BAR_AMT_LO = "font-label-sm text-label-sm text-on-surface-variant text-left min-w-[70px]";
+const BAR_NAME_HI = "w-24 sm:w-28 truncate font-label-sm text-xs sm:text-label-sm text-on-surface shrink-0";
+const BAR_NAME_LO = "w-24 sm:w-28 truncate font-label-sm text-xs sm:text-label-sm text-on-surface-variant shrink-0";
+const BAR_TRACK_HI = "flex-1 h-3 rounded-full bg-surface-container-highest overflow-hidden min-w-[50px]";
+const BAR_TRACK_LO = "flex-1 h-2 rounded-full bg-surface-container-highest overflow-hidden min-w-[50px]";
+const BAR_AMT_HI = "font-label-sm text-xs sm:text-label-sm font-bold text-on-surface text-left min-w-[65px] sm:min-w-[70px] shrink-0";
+const BAR_AMT_LO = "font-label-sm text-xs sm:text-label-sm text-on-surface-variant text-left min-w-[65px] sm:min-w-[70px] shrink-0";
 
 const SALES_BARS = [
   { name: "التحلية (الرياض)", nameClass: BAR_NAME_HI, trackClass: BAR_TRACK_HI, fill: "h-full bg-primary-container rounded-full", width: "100%", amountClass: BAR_AMT_HI, amount: "28,450 ر.س" },
@@ -61,24 +61,24 @@ export default function ReportsPage() {
             تقارير مالية وتشغيلية شاملة لفروع دايت كينج التسعة — مبيعات، مصروفات، مشتريات، ومخزون
           </p>
         </div>
-        <button className="inline-flex items-center gap-space-sm px-space-lg py-space-sm rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg shadow-sm transition-colors self-start lg:self-auto" type="button">
+        <button className="inline-flex items-center justify-center gap-space-sm px-space-lg py-space-sm rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-lg text-label-lg shadow-sm transition-colors w-full sm:w-auto" type="button">
           <span className="material-symbols-outlined text-[20px] text-primary">download</span>
           <span>تصدير التقارير (PDF/Excel)</span>
         </button>
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl mb-space-lg shadow-sm">
-        <div className="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg" id="time-filter-group">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl mb-space-lg shadow-sm">
+        <div className="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg overflow-x-auto no-scrollbar w-full sm:w-auto" id="time-filter-group">
           <button className={period === "today" ? TAB_ON : TAB_OFF} onClick={() => setPeriod("today")} type="button">اليوم</button>
           <button className={period === "week" ? TAB_ON : TAB_OFF} onClick={() => setPeriod("week")} type="button">هذا الأسبوع</button>
           <button className={period === "month" ? TAB_ON : TAB_OFF} onClick={() => setPeriod("month")} type="button">هذا الشهر</button>
           <button className={period === "custom" ? TAB_ON : TAB_OFF} onClick={() => setPeriod("custom")} type="button">فترة مخصصة</button>
         </div>
-        <div className="flex items-center gap-space-sm">
+        <div className="flex items-center justify-between sm:justify-start gap-space-sm w-full sm:w-auto">
           <label className="font-label-md text-label-md text-on-surface-variant whitespace-nowrap" htmlFor="report-branch-select">الفرع:</label>
-          <div className="relative">
-            <select className="bg-surface-container-lowest text-on-surface font-body-md text-body-md py-space-xs px-space-md pl-space-xl rounded-lg focus:outline-none focus:ring-1 focus:ring-primary-container appearance-none cursor-pointer" defaultValue="all" id="report-branch-select">
+          <div className="relative flex-1 sm:flex-initial">
+            <select className="w-full sm:w-auto bg-surface-container-lowest text-on-surface font-body-md text-body-md py-space-xs px-space-md pl-space-xl rounded-lg focus:outline-none focus:ring-1 focus:ring-primary-container appearance-none cursor-pointer" defaultValue="all" id="report-branch-select">
               <option value="all">كل الفروع (9 فروع)</option>
               <option value="tahlia">فرع التحلية - الرياض</option>
               <option value="olaya">فرع العليا - الرياض</option>
@@ -99,7 +99,7 @@ export default function ReportsPage() {
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-space-xl pb-space-xl">
 
         {/* Section 1: Sales Report */}
-        <section className="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+        <section className="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-space-sm">
               <div className="w-2 h-6 rounded-full bg-primary-container"></div>
@@ -108,14 +108,14 @@ export default function ReportsPage() {
                 <p className="font-label-sm text-label-sm text-on-surface-variant">إجمالي إيرادات الفروع التسعة وتحليل طرق الدفع</p>
               </div>
             </div>
-            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm">
+            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm shrink-0">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
               شهري نشط
             </span>
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 gap-space-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
             <div className="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-xs">
               <span className="font-label-sm text-label-sm text-on-surface-variant">إجمالي المبيعات</span>
               <span className="font-headline-lg text-headline-lg text-on-surface font-extrabold">148,950 <span className="text-primary font-label-lg text-label-lg">ر.س</span></span>
@@ -177,7 +177,7 @@ export default function ReportsPage() {
         </section>
 
         {/* Section 2: Expenses Report */}
-        <section className="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+        <section className="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-space-sm">
               <div className="w-2 h-6 rounded-full bg-secondary-container"></div>
@@ -186,7 +186,7 @@ export default function ReportsPage() {
                 <p className="font-label-sm text-label-sm text-on-surface-variant">تحليل مصروفات التشغيل والإيجارات والرواتب لجميع الفروع</p>
               </div>
             </div>
-            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm">
+            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm shrink-0">
               <span className="material-symbols-outlined text-[14px]">account_balance</span>
               مالي
             </span>
@@ -203,14 +203,14 @@ export default function ReportsPage() {
                 <span className="text-on-surface-variant">مقارنة بالشهر السابق</span>
               </span>
             </div>
-            <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-secondary text-[28px]">savings</span>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-secondary text-[24px] sm:text-[28px]">savings</span>
             </div>
           </div>
 
           {/* Expenses Table */}
           <div className="overflow-x-auto rounded-lg bg-surface-container">
-            <table className="w-full text-right font-body-sm text-body-sm">
+            <table className="w-full text-right font-body-sm text-body-sm min-w-[500px]">
               <thead>
                 <tr className="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
                   <th className="p-3 rounded-r-lg">الفرع</th>
@@ -249,7 +249,7 @@ export default function ReportsPage() {
         </section>
 
         {/* Section 3: Purchases Report */}
-        <section className="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+        <section className="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-space-sm">
               <div className="w-2 h-6 rounded-full bg-tertiary"></div>
@@ -258,14 +258,14 @@ export default function ReportsPage() {
                 <p className="font-label-sm text-label-sm text-on-surface-variant">فواتير التوريد والمشتريات من الموردين المعتمدين</p>
               </div>
             </div>
-            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">
+            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm shrink-0">
               <span className="material-symbols-outlined text-[14px]">local_shipping</span>
               الموردون
             </span>
           </div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 gap-space-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
             <div className="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-xs">
               <span className="font-label-sm text-label-sm text-on-surface-variant">إجمالي المشتريات الشهرية</span>
               <span className="font-headline-lg text-headline-lg text-on-surface font-extrabold">52,400 <span className="text-tertiary font-label-lg text-label-lg">ر.س</span></span>
@@ -280,7 +280,7 @@ export default function ReportsPage() {
 
           {/* Suppliers Table */}
           <div className="overflow-x-auto rounded-lg bg-surface-container">
-            <table className="w-full text-right font-body-sm text-body-sm">
+            <table className="w-full text-right font-body-sm text-body-sm min-w-[500px]">
               <thead>
                 <tr className="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
                   <th className="p-3 rounded-r-lg">المورد والفئة</th>
@@ -309,7 +309,7 @@ export default function ReportsPage() {
         </section>
 
         {/* Section 4: Inventory Report */}
-        <section className="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+        <section className="bg-surface-container-low rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-space-sm">
               <div className="w-2 h-6 rounded-full bg-primary"></div>
@@ -318,7 +318,7 @@ export default function ReportsPage() {
                 <p className="font-label-sm text-label-sm text-on-surface-variant">رصيد المستودع المركزي وحركة الوارد والمنصرف الشهرية</p>
               </div>
             </div>
-            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+            <span className="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm shrink-0">
               <span className="material-symbols-outlined text-[14px]">inventory_2</span>
               المستودع
             </span>
@@ -333,13 +333,13 @@ export default function ReportsPage() {
                 4.2x{" "}<span className="font-label-sm text-label-sm text-on-surface-variant">شهرياً</span>
               </span>
             </div>
-            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary text-[28px]">warehouse</span>
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+              <span className="material-symbols-outlined text-primary text-[24px] sm:text-[28px]">warehouse</span>
             </div>
           </div>
 
           {/* In / Out Cards */}
-          <div className="grid grid-cols-2 gap-space-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
             <div className="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-xs">
               <div className="flex items-center gap-1.5">
                 <span className="material-symbols-outlined text-tertiary text-[18px]">south_west</span>
@@ -369,7 +369,7 @@ export default function ReportsPage() {
                 3 أصناف بحاجة لتوريد
               </span>
             </div>
-            <div className=" flex items-center justify-between bg-surface-container rounded-lg px-space-md py-space-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between bg-surface-container rounded-lg p-space-sm sm:px-space-md sm:py-space-sm gap-2">
               <div className="flex items-center gap-space-sm">
                 <span className="material-symbols-outlined text-secondary text-[20px]">phishing</span>
                 <div className="flex flex-col">
@@ -377,9 +377,9 @@ export default function ReportsPage() {
                   <span className="font-label-sm text-label-sm text-on-surface-variant">RAW-SLM-03</span>
                 </div>
               </div>
-              <span className="px-space-sm py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold">420 كجم متبقي</span>
+              <span className="self-start sm:self-auto px-space-sm py-0.5 rounded-full bg-secondary/15 text-secondary font-label-sm text-label-sm font-bold shrink-0">420 كجم متبقي</span>
             </div>
-            <div className="flex items-center justify-between bg-surface-container rounded-lg px-space-md py-space-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between bg-surface-container rounded-lg p-space-sm sm:px-space-md sm:py-space-sm gap-2">
               <div className="flex items-center gap-space-sm">
                 <span className="material-symbols-outlined text-error text-[20px]">liquor</span>
                 <div className="flex flex-col">
@@ -387,9 +387,9 @@ export default function ReportsPage() {
                   <span className="font-label-sm text-label-sm text-on-surface-variant">SAU-BBQ-04</span>
                 </div>
               </div>
-              <span className="px-space-sm py-0.5 rounded-full bg-error/15 text-error font-label-sm text-label-sm font-bold">95 عبوة متبقية</span>
+              <span className="self-start sm:self-auto px-space-sm py-0.5 rounded-full bg-error/15 text-error font-label-sm text-label-sm font-bold shrink-0">95 عبوة متبقية</span>
             </div>
-            <div className="flex items-center justify-between bg-surface-container rounded-lg px-space-md py-space-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between bg-surface-container rounded-lg p-space-sm sm:px-space-md sm:py-space-sm gap-2">
               <div className="flex items-center gap-space-sm">
                 <span className="material-symbols-outlined text-error text-[20px]">water_drop</span>
                 <div className="flex flex-col">
@@ -397,7 +397,7 @@ export default function ReportsPage() {
                   <span className="font-label-sm text-label-sm text-on-surface-variant">OIL-OLV-02</span>
                 </div>
               </div>
-              <span className="px-space-sm py-0.5 rounded-full bg-error/15 text-error font-label-sm text-label-sm font-bold">120 لتر متبقي</span>
+              <span className="self-start sm:self-auto px-space-sm py-0.5 rounded-full bg-error/15 text-error font-label-sm text-label-sm font-bold shrink-0">120 لتر متبقي</span>
             </div>
           </div>
         </section>

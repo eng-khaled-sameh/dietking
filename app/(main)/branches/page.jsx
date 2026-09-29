@@ -10,19 +10,19 @@ const BRANCHES = [
 export default function BranchesPage() {
   return (
     <div className="flex flex-col w-full py-space-lg">
-      <div className="flex items-center justify-between mb-space-lg">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md mb-space-lg">
         <div className="flex flex-col gap-space-xs">
           <h1 className="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">الفروع</h1>
           <span className="font-body-sm text-body-sm text-on-surface-variant">إدارة مواقع ومنافذ تقديم وجبات دايت كينج</span>
         </div>
-        <button className="inline-flex items-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary font-label-lg text-label-lg px-space-md py-space-sm rounded-lg transition-colors shadow-sm cursor-pointer" type="button">
+        <button className="inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary font-label-lg text-label-lg px-space-md py-space-sm rounded-lg transition-colors shadow-sm cursor-pointer w-full sm:w-auto" type="button">
           <span className="material-symbols-outlined text-[20px]">add</span>
           <span>إضافة فرع</span>
         </button>
       </div>
       <div className="w-full bg-surface-container rounded-xl shadow-md overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-right border-collapse">
+          <table className="w-full text-right border-collapse min-w-[600px]">
             <thead>
               <tr className="bg-surface-container-high">
                 <th className="py-space-md px-space-lg font-label-md text-label-md text-on-surface-variant font-bold" scope="col">اسم الفرع</th>

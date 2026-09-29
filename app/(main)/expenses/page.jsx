@@ -109,8 +109,8 @@ export default function ExpensesPage() {
             <p className="font-body-md text-body-md text-on-surface-variant">إدارة وتسجيل وتتبع مصروفات فروع دايت كينج التشغيلية والرأسمالية</p>
           </div>
         </div>
-        <div>
-          <button className="inline-flex items-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm active:scale-95 cursor-pointer" id="openAddModalBtn" onClick={openModal} type="button">
+        <div className="w-full sm:w-auto">
+          <button className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-md py-2.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-on-primary font-label-lg text-label-lg transition-all shadow-sm active:scale-95 cursor-pointer" id="openAddModalBtn" onClick={openModal} type="button">
             <span className="material-symbols-outlined text-lg leading-none">add</span>
             <span>إضافة مصروف</span>
           </button>
@@ -215,7 +215,7 @@ export default function ExpensesPage() {
       {/* Expenses Table */}
       <div className="rounded-xl bg-surface-container-low shadow-sm overflow-hidden mb-space-lg">
         <div className="overflow-x-auto">
-          <table className="w-full text-right border-collapse" id="expensesTable">
+          <table className="w-full text-right border-collapse min-w-[650px]" id="expensesTable">
             <thead>
               <tr className="bg-surface-container font-label-md text-label-md text-on-surface-variant">
                 <th className="py-3 px-space-md text-right">التاريخ</th>
@@ -269,8 +269,8 @@ export default function ExpensesPage() {
       {/* Add Expense Modal */}
       {modalOpen && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-space-md" id="addExpenseModal" onClick={handleBackdropClick}>
-          <div className="relative w-full max-w-2xl bg-surface-container-low rounded-xl shadow-xl overflow-hidden">
-            <div className="h-14 px-space-lg bg-surface-container flex items-center justify-between">
+          <div className="relative w-full max-w-2xl bg-surface-container-low rounded-xl shadow-xl overflow-hidden max-h-[90vh] flex flex-col">
+            <div className="h-14 px-space-lg bg-surface-container flex items-center justify-between shrink-0">
               <div className="flex items-center gap-space-xs text-on-surface">
                 <span className="material-symbols-outlined text-primary-container">receipt_long</span>
                 <h2 className="font-headline-sm text-headline-sm">إضافة مصروف جديد</h2>
@@ -279,7 +279,7 @@ export default function ExpensesPage() {
                 <span className="material-symbols-outlined text-lg">close</span>
               </button>
             </div>
-            <form className="p-space-lg flex flex-col gap-space-md" id="addExpenseForm" onSubmit={handleSubmit}>
+            <form className="p-space-md sm:p-space-lg flex flex-col gap-space-md overflow-y-auto" id="addExpenseForm" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
                 <div className="flex flex-col gap-1.5">
                   <label className="font-label-md text-label-md text-on-surface-variant">اختيار الفرع <span className="text-error">*</span></label>

@@ -68,20 +68,20 @@ export default function InventoryPage() {
             إدارة رصيد المستودع المركزي، تدفق التوريد للمطبخ المركزي، المنتجات التامة، وطلبات الفروع التسعة
           </p>
         </div>
-        <div className="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-sm rounded-xl">
-          <div className="flex items-center gap-1.5 text-primary">
-            <span className="material-symbols-outlined text-[18px]">warehouse</span>
-            <span className="font-label-md text-label-md">المستودع الرئيسي</span>
+        <div className="flex items-center gap-1.5 sm:gap-space-xs bg-surface-container-low px-2 sm:px-space-md py-1.5 sm:py-space-sm rounded-xl overflow-x-auto no-scrollbar w-full sm:w-auto justify-between sm:justify-start">
+          <div className="flex items-center gap-1 sm:gap-1.5 text-primary shrink-0">
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">warehouse</span>
+            <span className="font-label-md text-xs sm:text-label-md">المستودع الرئيسي</span>
           </div>
-          <span className="material-symbols-outlined text-outline-variant text-[16px]">arrow_back</span>
-          <div className="flex items-center gap-1.5 text-secondary">
-            <span className="material-symbols-outlined text-[18px]">skillet</span>
-            <span className="font-label-md text-label-md">المطبخ المركزي</span>
+          <span className="material-symbols-outlined text-outline-variant text-[14px] sm:text-[16px] shrink-0">arrow_back</span>
+          <div className="flex items-center gap-1 sm:gap-1.5 text-secondary shrink-0">
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">skillet</span>
+            <span className="font-label-md text-xs sm:text-label-md">المطبخ المركزي</span>
           </div>
-          <span className="material-symbols-outlined text-outline-variant text-[16px]">arrow_back</span>
-          <div className="flex items-center gap-1.5 text-tertiary">
-            <span className="material-symbols-outlined text-[18px]">storefront</span>
-            <span className="font-label-md text-label-md">الفروع الـ 9</span>
+          <span className="material-symbols-outlined text-outline-variant text-[14px] sm:text-[16px] shrink-0">arrow_back</span>
+          <div className="flex items-center gap-1 sm:gap-1.5 text-tertiary shrink-0">
+            <span className="material-symbols-outlined text-[16px] sm:text-[18px]">storefront</span>
+            <span className="font-label-md text-xs sm:text-label-md">الفروع الـ 9</span>
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@ export default function InventoryPage() {
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-right">
+            <table className="w-full text-right min-w-[650px]">
               <thead>
                 <tr className="bg-surface-container text-on-surface-variant font-label-md text-label-md">
                   <th className="py-space-sm px-space-md rounded-r-lg">اسم المنتج وكود الصنف</th>
@@ -239,7 +239,7 @@ export default function InventoryPage() {
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-right">
+            <table className="w-full text-right min-w-[600px]">
               <thead>
                 <tr className="bg-surface-container text-on-surface-variant font-label-md text-label-md">
                   <th className="py-space-sm px-space-md rounded-r-lg">رقم التحويل</th>
@@ -285,7 +285,7 @@ export default function InventoryPage() {
             </span>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-right">
+            <table className="w-full text-right min-w-[650px]">
               <thead>
                 <tr className="bg-surface-container text-on-surface-variant font-label-md text-label-md">
                   <th className="py-space-sm px-space-md rounded-r-lg">اسم المنتج / الوجبة التامة</th>
@@ -337,7 +337,7 @@ export default function InventoryPage() {
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full text-right">
+            <table className="w-full text-right min-w-[650px]">
               <thead>
                 <tr className="bg-surface-container text-on-surface-variant font-label-md text-label-md">
                   <th className="py-space-sm px-space-md rounded-r-lg">رقم الطلب</th>

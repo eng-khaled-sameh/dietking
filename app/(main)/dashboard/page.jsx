@@ -23,12 +23,12 @@ export default function DashboardPage() {
           <span className="font-headline-lg text-headline-lg text-on-surface">نظرة عامة على الأداء</span>
           <span className="font-body-sm text-body-sm text-on-surface-variant">مؤشرات الإيرادات والمصروفات وحركة الفروع المباشرة</span>
         </div>
-        <div className="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-xl self-start sm:self-auto">
+        <div className="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-xl w-full sm:w-auto overflow-x-auto no-scrollbar">
           {filters.map((filter) => (
             <button 
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-space-md py-space-xs rounded-lg font-label-md text-label-md transition-all ${
+              className={`flex-1 sm:flex-initial text-center px-3 sm:px-space-md py-space-xs rounded-lg font-label-md text-xs sm:text-label-md transition-all whitespace-nowrap ${
                 activeFilter === filter 
                   ? "bg-primary-container text-on-primary-container" 
                   : "text-on-surface-variant hover:text-on-surface"
@@ -188,34 +188,34 @@ export default function DashboardPage() {
         </div>
 
         {/* RTL Days of Week Axis */}
-        <div className="grid grid-cols-7 text-center pt-space-sm">
+        <div className="grid grid-cols-7 text-center pt-space-sm gap-0.5">
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-on-surface">الجمعة</span>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">31.2k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-on-surface">الجمعة</span>
+            <span className="text-[10px] sm:text-body-sm text-on-surface-variant">31.2k</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-primary font-bold">الخميس</span>
-            <span className="font-body-sm text-body-sm text-primary font-semibold">34.8k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-primary font-bold">الخميس</span>
+            <span className="text-[10px] sm:text-body-sm text-primary font-semibold">34.8k</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-on-surface">الأربعاء</span>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">25.4k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-on-surface">الأربعاء</span>
+            <span className="text-[10px] sm:text-body-sm text-on-surface-variant">25.4k</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-on-surface">الثلاثاء</span>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">28.9k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-on-surface">الثلاثاء</span>
+            <span className="text-[10px] sm:text-body-sm text-on-surface-variant">28.9k</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-on-surface">الإثنين</span>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">21.6k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-on-surface">الإثنين</span>
+            <span className="text-[10px] sm:text-body-sm text-on-surface-variant">21.6k</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-on-surface">الأحد</span>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">23.8k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-on-surface">الأحد</span>
+            <span className="text-[10px] sm:text-body-sm text-on-surface-variant">23.8k</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-label-md text-label-md text-on-surface">السبت</span>
-            <span className="font-body-sm text-body-sm text-on-surface-variant">18.8k</span>
+            <span className="text-[11px] sm:text-label-md font-semibold text-on-surface">السبت</span>
+            <span className="text-[10px] sm:text-body-sm text-on-surface-variant">18.8k</span>
           </div>
         </div>
       </div>
@@ -235,7 +235,7 @@ export default function DashboardPage() {
           </span>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-right">
+          <table className="w-full text-right min-w-[550px]">
             <thead>
               <tr className="bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
                 <th className="py-space-sm px-space-md rounded-r-lg">رقم الطلب</th>

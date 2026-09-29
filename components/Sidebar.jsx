@@ -9,9 +9,9 @@ export default function Sidebar({ isOpen, onClose }) {
 
   return (
     <aside
-      className={`fixed right-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.25)] transition-transform duration-300
-        ${isOpen ? "translate-x-0" : "translate-x-full"}
-        lg:translate-x-0`}
+      className={`fixed right-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col py-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.25)] transition-all duration-300
+        ${isOpen ? "translate-x-0 opacity-100 visible pointer-events-auto" : "translate-x-full opacity-0 invisible pointer-events-none"}
+        lg:translate-x-0 lg:opacity-100 lg:visible lg:pointer-events-auto`}
     >
       {/* Logo + close button */}
       <div className="px-space-lg mb-space-lg flex items-center justify-between gap-space-sm">

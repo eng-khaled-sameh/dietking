@@ -35,13 +35,13 @@ export default function ProductsPage() {
             <h1 className="font-headline-xl text-headline-xl text-on-surface">المنتجات</h1>
             <p className="font-body-sm text-body-sm text-on-surface-variant">إدارة وتحديث قائمة الأطباق الغذائية والوجبات الصحية</p>
           </div>
-          <button className="inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg shadow-md hover:opacity-95 transition-all" type="button">
+          <button className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg shadow-md hover:opacity-95 transition-all" type="button">
             <span className="material-symbols-outlined text-[20px]">add</span>
             <span>إضافة منتج +</span>
           </button>
         </div>
 
-        <div className="flex items-center gap-space-xs border-b border-surface-container-highest mb-space-lg">
+        <div className="flex items-center gap-space-xs border-b border-surface-container-highest mb-space-lg overflow-x-auto no-scrollbar">
           <button 
             type="button"
             onClick={() => setActiveTab("meals")}
@@ -86,7 +86,7 @@ export default function ProductsPage() {
                 <h3 className="font-label-lg text-label-lg text-on-surface">جدول فئات أوزان البروتين وأسعار الوجبة</h3>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full text-right">
+                <table className="w-full text-right min-w-[650px]">
                   <thead>
                     <tr className="bg-surface-container-high/30">
                       <th className="py-space-md px-space-lg font-headline-sm text-label-md text-on-surface-variant" scope="col">المنتج</th>
@@ -141,7 +141,7 @@ export default function ProductsPage() {
           <div>
             <div className="bg-surface-container-low rounded-xl shadow-sm overflow-hidden">
               <div className="overflow-x-auto">
-                <table className="w-full text-right">
+                <table className="w-full text-right min-w-[600px]">
                   <thead>
                     <tr className="bg-surface-container-high/60">
                       <th className="py-space-md px-space-lg font-headline-sm text-label-md text-on-surface-variant" scope="col">اسم المنتج</th>

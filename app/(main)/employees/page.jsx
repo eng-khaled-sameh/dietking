@@ -60,36 +60,36 @@ export default function EmployeesPage() {
               <h1 className="font-headline-xl text-headline-xl text-on-surface">الموظفين</h1>
               <p className="font-body-sm text-body-sm text-on-surface-variant">إدارة الكوادر التشغيلية والوظيفية لفروع سلسلة دايت كينج</p>
             </div>
-            <div className="flex flex-wrap items-center gap-space-sm">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-space-xs sm:gap-space-sm w-full lg:w-auto">
               <button 
                 type="button"
                 onClick={() => setModal("leave")}
-                className="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-colors"
+                className="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 px-2 sm:px-space-md py-2 sm:py-space-sm rounded-lg font-label-lg text-xs sm:text-label-lg transition-colors"
               >
-                <span className="material-symbols-outlined text-[19px] text-tertiary">event_note</span>
+                <span className="material-symbols-outlined text-[17px] sm:text-[19px] text-tertiary">event_note</span>
                 <span>طلب إجازة</span>
               </button>
               <button 
                 type="button"
                 onClick={() => setModal("deduction")}
-                className="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-colors"
+                className="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 px-2 sm:px-space-md py-2 sm:py-space-sm rounded-lg font-label-lg text-xs sm:text-label-lg transition-colors"
               >
-                <span className="material-symbols-outlined text-[19px] text-error">remove_circle_outline</span>
+                <span className="material-symbols-outlined text-[17px] sm:text-[19px] text-error">remove_circle_outline</span>
                 <span>إضافة خصم</span>
               </button>
               <button 
                 type="button"
                 onClick={() => setModal("reward")}
-                className="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 px-space-md py-space-sm rounded-lg font-label-lg text-label-lg transition-colors"
+                className="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container-highest text-on-surface border border-outline-variant/40 px-2 sm:px-space-md py-2 sm:py-space-sm rounded-lg font-label-lg text-xs sm:text-label-lg transition-colors"
               >
-                <span className="material-symbols-outlined text-[19px] text-secondary">military_tech</span>
+                <span className="material-symbols-outlined text-[17px] sm:text-[19px] text-secondary">military_tech</span>
                 <span>إضافة مكافأة</span>
               </button>
               <button 
                 type="button"
-                className="inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg shadow-sm transition-colors"
+                className="inline-flex items-center justify-center gap-space-xs bg-primary-container hover:bg-inverse-primary text-on-primary-container px-2 sm:px-space-lg py-2 sm:py-space-sm rounded-lg font-label-lg text-xs sm:text-label-lg shadow-sm transition-colors"
               >
-                <span className="material-symbols-outlined text-[20px]">add</span>
+                <span className="material-symbols-outlined text-[18px] sm:text-[20px]">add</span>
                 <span>إضافة موظف</span>
               </button>
             </div>
@@ -101,7 +101,7 @@ export default function EmployeesPage() {
               <input 
                 className="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md pr-10 pl-space-md py-space-sm rounded-lg focus:outline-none focus:bg-surface-container-low transition-colors" 
                 placeholder="بحث عن الموظف..." 
-                type="text"
+                type="text" 
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
@@ -128,7 +128,7 @@ export default function EmployeesPage() {
 
           <div className="bg-surface-container rounded-xl shadow-sm overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full text-right border-collapse">
+              <table className="w-full text-right border-collapse min-w-[700px]">
                 <thead>
                   <tr className="bg-surface-container-high text-on-surface-variant font-label-lg text-label-md">
                     <th className="py-space-md px-space-lg">اسم الموظف</th>

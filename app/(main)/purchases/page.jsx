@@ -141,8 +141,8 @@ export default function PurchasesPage() {
           </div>
           <p className="font-body-md text-body-md text-on-surface-variant">إدارة فواتير التوريد والمشتريات للمخزن الرئيسي</p>
         </div>
-        <div>
-          <button type="button" onClick={handleAdd} className="inline-flex items-center gap-space-xs px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer">
+        <div className="w-full sm:w-auto">
+          <button type="button" onClick={handleAdd} className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg shadow-sm hover:brightness-110 active:scale-[0.98] transition-all cursor-pointer">
             <span className="material-symbols-outlined text-[20px]">add</span>
             <span>فاتورة شراء جديدة +</span>
           </button>
@@ -162,7 +162,7 @@ export default function PurchasesPage() {
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <div id="status-filters" className="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0">
+        <div id="status-filters" className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 lg:pb-0 w-full lg:w-auto">
           <button type="button" onClick={() => setStatusFilter("all")} className={statusFilter === "all" ? FILTER_ON : FILTER_OFF}>الكل</button>
           <button type="button" onClick={() => setStatusFilter("completed")} className={statusFilter === "completed" ? FILTER_ON : FILTER_OFF}>مكتملة</button>
           <button type="button" onClick={() => setStatusFilter("pending")} className={statusFilter === "pending" ? FILTER_ON : FILTER_OFF}>معلقة</button>
@@ -173,7 +173,7 @@ export default function PurchasesPage() {
       {/* Table */}
       <div className="w-full bg-surface-container rounded-xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
-          <table id="purchases-table" className="w-full text-right border-collapse">
+          <table id="purchases-table" className="w-full text-right border-collapse min-w-[650px]">
             <thead>
               <tr className="bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
                 <th className="py-3.5 px-space-lg text-right">رقم الفاتورة</th>
@@ -271,7 +271,7 @@ export default function PurchasesPage() {
                 </button>
               </div>
               <div className="bg-surface-container-lowest rounded-lg p-space-sm overflow-x-auto shadow-inner">
-                <table id="modal-items-table" className="w-full text-right">
+                <table id="modal-items-table" className="w-full text-right min-w-[480px]">
                   <thead>
                     <tr className="text-on-surface-variant font-label-sm text-label-sm">
                       <th className="py-2 px-2">المنتج</th>
