@@ -8,7 +8,7 @@ export default function DashboardPage() {
   const filters = ["الأسبوع الحالي", "الشهر الحالي", "الربع السنوي"];
 
   const recentSales = [
-    { id: "#DK-8924", branch: "الفرع الرئيسي - الرياض", amount: "245.00", time: "منذ 4 دقائق", status: "مكتمل" },
+    { id: "#DK-8924", branch: "الفرع الرئيسي - جدة", amount: "245.00", time: "منذ 4 دقائق", status: "مكتمل" },
     { id: "#DK-8923", branch: "فرع طريق الملك فهد", amount: "180.50", time: "منذ 11 دقيقة", status: "مكتمل" },
     { id: "#DK-8922", branch: "فرع النخيل مول", amount: "512.00", time: "منذ 24 دقيقة", status: "قيد التجهيز" },
     { id: "#DK-8921", branch: "فرع الصحافة", amount: "95.00", time: "منذ 36 دقيقة", status: "مكتمل" },
@@ -25,14 +25,13 @@ export default function DashboardPage() {
         </div>
         <div className="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-xl w-full sm:w-auto overflow-x-auto no-scrollbar">
           {filters.map((filter) => (
-            <button 
+            <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`flex-1 sm:flex-initial text-center px-3 sm:px-space-md py-space-xs rounded-lg font-label-md text-xs sm:text-label-md transition-all whitespace-nowrap ${
-                activeFilter === filter 
-                  ? "bg-primary-container text-on-primary-container" 
-                  : "text-on-surface-variant hover:text-on-surface"
-              }`}
+              className={`flex-1 sm:flex-initial text-center px-3 sm:px-space-md py-space-xs rounded-lg font-label-md text-xs sm:text-label-md transition-all whitespace-nowrap ${activeFilter === filter
+                ? "bg-primary-container text-on-primary-container"
+                : "text-on-surface-variant hover:text-on-surface"
+                }`}
             >
               {filter}
             </button>
@@ -171,11 +170,11 @@ export default function DashboardPage() {
             <line stroke="#222a3d" strokeDasharray="4 4" strokeWidth="1" x1="0" x2="900" y1="80" y2="80" />
             <line stroke="#222a3d" strokeDasharray="4 4" strokeWidth="1" x1="0" x2="900" y1="130" y2="130" />
             <line stroke="#222a3d" strokeDasharray="4 4" strokeWidth="1" x1="0" x2="900" y1="180" y2="180" />
-            
+
             <path d="M 50 120 Q 200 110, 340 100 T 630 85 T 850 70" fill="none" opacity="0.65" stroke="url(#amberLineGrad)" strokeDasharray="6 6" strokeWidth="2" />
             <path d="M 850 140 C 780 120, 750 110, 716 110 C 670 110, 620 135, 583 125 C 530 115, 490 75, 450 75 C 400 75, 360 105, 316 95 C 260 85, 220 40, 183 40 C 140 40, 90 55, 50 50 L 50 210 L 850 210 Z" fill="url(#orangeAreaGrad)" />
             <path d="M 850 140 C 780 120, 750 110, 716 110 C 670 110, 620 135, 583 125 C 530 115, 490 75, 450 75 C 400 75, 360 105, 316 95 C 260 85, 220 40, 183 40 C 140 40, 90 55, 50 50" fill="none" stroke="#f97316" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" />
-            
+
             <circle className="transition-all" cx="850" cy="140" fill="#f97316" r="4.5" />
             <circle cx="716" cy="110" fill="#f97316" r="4.5" />
             <circle cx="583" cy="125" fill="#f97316" r="4.5" />

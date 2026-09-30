@@ -116,6 +116,7 @@ export default function ReportsPage() {
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+
             <div className="bg-surface-container rounded-xl p-space-md flex flex-col gap-space-xs">
               <span className="font-label-sm text-label-sm text-on-surface-variant">إجمالي المبيعات</span>
               <span className="font-headline-lg text-headline-lg text-on-surface font-extrabold">148,950 <span className="text-primary font-label-lg text-label-lg">ر.س</span></span>

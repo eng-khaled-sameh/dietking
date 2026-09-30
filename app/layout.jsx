@@ -11,6 +11,8 @@ export const viewport = {
   viewportFit: "cover",
 };
 
+import Providers from "./providers";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl" className="dark">
@@ -21,7 +23,9 @@ export default function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
       </head>
       <body className="bg-surface font-body-md text-on-surface">
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
